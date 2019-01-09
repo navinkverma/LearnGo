@@ -8,6 +8,14 @@ dev:
         - script:
             name: env
             code: env
+        - script:
+            name: go get
+            code: |
+                cd $WERCKER_SOURCE_DIR
+                go version
+                go get -u github.com/Masterminds/glide
+                export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
+                glide install
         - internal/watch:
             code: go run main.go
             reload: true
@@ -41,4 +49,14 @@ build:
             name: copy files to wercker output
             code: |
                 cp -R ./ ${WERCKER_OUTPUT_DIR}
+# deploy pipeline
+deploy:
+    stpes:
+        - internal/docker-push:
+            # specify the image to be pushed - this is the one we created earlier
+            image-name: LearnGo 
+            username: navinkverma # Registry username  
+            password: H9PbQMwzAGX7fRe # Registry password
+            registry: https://hub.docker.com
+            repository: navinkverma/learn-go
         
