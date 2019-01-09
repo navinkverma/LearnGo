@@ -56,4 +56,3 @@ deploy:
             username: navinkverma # Registry username  
             password: H9PbQMwzAGX7fRe # Registry password
             repository: navinkverma/learn-go
-        
