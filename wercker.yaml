@@ -1,0 +1,13 @@
+# container definition
+box: golang
+# dev pipeline
+dev:
+  steps:
+    - setup-go-workspace:
+        package-dir: github.com/navinkverma/LearnGo
+    - script:
+        name: env
+        code: env
+    - internal/watch:
+        code: go run main.go
+        reload: true
