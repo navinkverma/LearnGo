@@ -55,6 +55,5 @@ deploy:
         - internal/docker-push:
             username: navinkverma # Registry username  
             password: H9PbQMwzAGX7fRe # Registry password
-            registry: https://hub.docker.com
             repository: navinkverma/learn-go
         
