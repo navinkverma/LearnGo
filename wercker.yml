@@ -53,8 +53,6 @@ build:
 deploy:
     stpes:
         - internal/docker-push:
-            # specify the image to be pushed - this is the one we created earlier
-            image-name: LearnGo 
             username: navinkverma # Registry username  
             password: H9PbQMwzAGX7fRe # Registry password
             registry: https://hub.docker.com
