@@ -53,6 +53,10 @@ build:
 # deploy pipeline
 deploy-docker-hub:
     stpes:
+        - script:
+            name: deploy start
+            code: |
+                echo START
         - internal/docker-scratch-push:
             username: $DOCKER_USERNAME # Registry username  
             password: $DOCKER_PASSWORD # Registry password
