@@ -57,12 +57,12 @@ deploy-docker:
             name: deploy start
             code: |
                 echo START
-        - internal/docker-scratch-push:
+        - internal/docker-push:
             username: $DOCKER_USERNAME # Registry username  
             password: $DOCKER_PASSWORD # Registry password
             registry: https://hub.docker.com
             repository: navinkverma/learn-go
-            cmd: ./LearnGo
+            cmd: LearnGo
         - script:
             name: deploy end
             code: |
