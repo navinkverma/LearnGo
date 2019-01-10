@@ -51,7 +51,7 @@ build:
             code: |
                 cp -R ./ ${WERCKER_OUTPUT_DIR}
 # deploy pipeline
-deploy-docker-hub:
+depx:
     stpes:
         - script:
             name: deploy start
