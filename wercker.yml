@@ -57,6 +57,6 @@ deploy-docker:
             username: $DOCKER_USERNAME # Registry username  
             password: $DOCKER_PASSWORD # Registry password
             repository: navinkverma/learn-go
-            cmd: LearnGo
+            cmd: /pipeline/source/LearnGo
 
 
