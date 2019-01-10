@@ -1,5 +1,7 @@
 # container definition
-box: golang
+box: 
+    id: google/golang
+    entrypoint: /bin/bash -c
 # dev pipeline
 dev:
     steps:
@@ -52,7 +54,9 @@ build:
 # deploy pipeline
 deploy:
     stpes:
-        - internal/docker-push:
-            username: navinkverma # Registry username  
-            password: H9PbQMwzAGX7fRe # Registry password
+        - internal/docker-scratch-push:
+            username: $USERNAME # Registry username  
+            password: $PASSWORD # Registry password
+            registry: https://registry.hub.docker.com
             repository: navinkverma/learn-go
+            cmd: ./LearnGo
