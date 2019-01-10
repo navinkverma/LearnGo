@@ -53,18 +53,10 @@ build:
 # deploy pipeline
 deploy-docker:
     steps:
-        - script:
-            name: deploy start
-            code: |
-                echo START
         - internal/docker-push:
             username: $DOCKER_USERNAME # Registry username  
             password: $DOCKER_PASSWORD # Registry password
-            registry: https://hub.docker.com
             repository: navinkverma/learn-go
             cmd: LearnGo
-        - script:
-            name: deploy end
-            code: |
-                echo END
+
 
