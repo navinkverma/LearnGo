@@ -1,7 +1,6 @@
 # container definition
 box: 
     id: google/golang
-    entrypoint: /bin/bash -c
 # dev pipeline
 dev:
     steps:
